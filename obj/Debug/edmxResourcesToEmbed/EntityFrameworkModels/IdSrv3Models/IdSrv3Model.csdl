@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdSrv3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientClaims_dbo_Clients_Client_Id" FromRole="ClientClaims" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientCorsOrigin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Origin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id" FromRole="ClientCorsOrigins" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientCustomGrantType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GrantType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id" FromRole="ClientCustomGrantTypes" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientIdPRestriction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Provider" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id" FromRole="ClientIdPRestrictions" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientPostLogoutRedirectUri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uri" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id" FromRole="ClientPostLogoutRedirectUris" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientRedirectUri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uri" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id" FromRole="ClientRedirectUris" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="ClientId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClientName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClientUri" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LogoUri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequireConsent" Type="Boolean" Nullable="false" />
+    <Property Name="AllowRememberConsent" Type="Boolean" Nullable="false" />
+    <Property Name="AllowAccessTokensViaBrowser" Type="Boolean" Nullable="false" />
+    <Property Name="Flow" Type="Int32" Nullable="false" />
+    <Property Name="AllowClientCredentialsOnly" Type="Boolean" Nullable="false" />
+    <Property Name="LogoutUri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogoutSessionRequired" Type="Boolean" Nullable="false" />
+    <Property Name="RequireSignOutPrompt" Type="Boolean" Nullable="false" />
+    <Property Name="AllowAccessToAllScopes" Type="Boolean" Nullable="false" />
+    <Property Name="IdentityTokenLifetime" Type="Int32" Nullable="false" />
+    <Property Name="AccessTokenLifetime" Type="Int32" Nullable="false" />
+    <Property Name="AuthorizationCodeLifetime" Type="Int32" Nullable="false" />
+    <Property Name="AbsoluteRefreshTokenLifetime" Type="Int32" Nullable="false" />
+    <Property Name="SlidingRefreshTokenLifetime" Type="Int32" Nullable="false" />
+    <Property Name="RefreshTokenUsage" Type="Int32" Nullable="false" />
+    <Property Name="UpdateAccessTokenOnRefresh" Type="Boolean" Nullable="false" />
+    <Property Name="RefreshTokenExpiration" Type="Int32" Nullable="false" />
+    <Property Name="AccessTokenType" Type="Int32" Nullable="false" />
+    <Property Name="EnableLocalLogin" Type="Boolean" Nullable="false" />
+    <Property Name="IncludeJwtId" Type="Boolean" Nullable="false" />
+    <Property Name="AlwaysSendClientClaims" Type="Boolean" Nullable="false" />
+    <Property Name="PrefixClientClaims" Type="Boolean" Nullable="false" />
+    <Property Name="AllowAccessToAllGrantTypes" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ClientClaims" Relationship="Self.FK_dbo_ClientClaims_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientClaims" />
+    <NavigationProperty Name="ClientCorsOrigins" Relationship="Self.FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientCorsOrigins" />
+    <NavigationProperty Name="ClientCustomGrantTypes" Relationship="Self.FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientCustomGrantTypes" />
+    <NavigationProperty Name="ClientIdPRestrictions" Relationship="Self.FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientIdPRestrictions" />
+    <NavigationProperty Name="ClientPostLogoutRedirectUris" Relationship="Self.FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientPostLogoutRedirectUris" />
+    <NavigationProperty Name="ClientRedirectUris" Relationship="Self.FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientRedirectUris" />
+    <NavigationProperty Name="ClientScopes" Relationship="Self.FK_dbo_ClientScopes_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientScopes" />
+    <NavigationProperty Name="ClientSecrets" Relationship="Self.FK_dbo_ClientSecrets_dbo_Clients_Client_Id" FromRole="Clients" ToRole="ClientSecrets" />
+  </EntityType>
+  <EntityType Name="ClientScope">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scope" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientScopes_dbo_Clients_Client_Id" FromRole="ClientScopes" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientSecret">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Expiration" Type="DateTimeOffset" Precision="7" />
+    <Property Name="Client_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_dbo_ClientSecrets_dbo_Clients_Client_Id" FromRole="ClientSecrets" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Consent">
+    <Key>
+      <PropertyRef Name="Subject" />
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="Subject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClientId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Scopes" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupChild">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="ChildGroupID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_dbo_GroupChilds_dbo_Groups_ParentKey" FromRole="GroupChilds" ToRole="Groups" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Tenant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="GroupChilds" Relationship="Self.FK_dbo_GroupChilds_dbo_Groups_ParentKey" FromRole="Groups" ToRole="GroupChilds" />
+  </EntityType>
+  <EntityType Name="LinkedAccountClaim">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="ProviderName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderAccountID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey" FromRole="LinkedAccountClaims" ToRole="UserAccounts" />
+  </EntityType>
+  <EntityType Name="LinkedAccount">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="ProviderName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderAccountID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey" FromRole="LinkedAccounts" ToRole="UserAccounts" />
+  </EntityType>
+  <EntityType Name="PasswordResetSecret">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="PasswordResetSecretID" Type="Guid" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Answer" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey" FromRole="PasswordResetSecrets" ToRole="UserAccounts" />
+  </EntityType>
+  <EntityType Name="ScopeClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="AlwaysIncludeInIdToken" Type="Boolean" Nullable="false" />
+    <Property Name="Scope_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Scope" Relationship="Self.FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id" FromRole="ScopeClaims" ToRole="Scopes" />
+  </EntityType>
+  <EntityType Name="Scope">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Required" Type="Boolean" Nullable="false" />
+    <Property Name="Emphasize" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="IncludeAllClaimsForUser" Type="Boolean" Nullable="false" />
+    <Property Name="ClaimsRule" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShowInDiscoveryDocument" Type="Boolean" Nullable="false" />
+    <Property Name="AllowUnrestrictedIntrospection" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ScopeClaims" Relationship="Self.FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id" FromRole="Scopes" ToRole="ScopeClaims" />
+    <NavigationProperty Name="ScopeSecrets" Relationship="Self.FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id" FromRole="Scopes" ToRole="ScopeSecrets" />
+  </EntityType>
+  <EntityType Name="ScopeSecret">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Expiration" Type="DateTimeOffset" Precision="7" />
+    <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Scope_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Scope" Relationship="Self.FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id" FromRole="ScopeSecrets" ToRole="Scopes" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="Key" />
+      <PropertyRef Name="TokenType" />
+    </Key>
+    <Property Name="Key" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TokenType" Type="Int16" Nullable="false" />
+    <Property Name="SubjectId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClientId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JsonCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Expiry" Type="DateTimeOffset" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="TwoFactorAuthToken">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Issued" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey" FromRole="TwoFactorAuthTokens" ToRole="UserAccounts" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Tenant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsAccountClosed" Type="Boolean" Nullable="false" />
+    <Property Name="AccountClosed" Type="DateTime" Precision="3" />
+    <Property Name="IsLoginAllowed" Type="Boolean" Nullable="false" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastFailedLogin" Type="DateTime" Precision="3" />
+    <Property Name="FailedLoginCount" Type="Int32" Nullable="false" />
+    <Property Name="PasswordChanged" Type="DateTime" Precision="3" />
+    <Property Name="RequiresPasswordReset" Type="Boolean" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+    <Property Name="IsAccountVerified" Type="Boolean" Nullable="false" />
+    <Property Name="LastFailedPasswordReset" Type="DateTime" Precision="3" />
+    <Property Name="FailedPasswordResetCount" Type="Int32" Nullable="false" />
+    <Property Name="MobileCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MobileCodeSent" Type="DateTime" Precision="3" />
+    <Property Name="MobilePhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePhoneNumberChanged" Type="DateTime" Precision="3" />
+    <Property Name="AccountTwoFactorAuthMode" Type="Int32" Nullable="false" />
+    <Property Name="CurrentTwoFactorAuthStatus" Type="Int32" Nullable="false" />
+    <Property Name="VerificationKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationPurpose" Type="Int32" />
+    <Property Name="VerificationKeySent" Type="DateTime" Precision="3" />
+    <Property Name="VerificationStorage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HashedPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LinkedAccountClaims" Relationship="Self.FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="LinkedAccountClaims" />
+    <NavigationProperty Name="LinkedAccounts" Relationship="Self.FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="LinkedAccounts" />
+    <NavigationProperty Name="PasswordResetSecrets" Relationship="Self.FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="PasswordResetSecrets" />
+    <NavigationProperty Name="TwoFactorAuthTokens" Relationship="Self.FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="TwoFactorAuthTokens" />
+    <NavigationProperty Name="UserCertificates" Relationship="Self.FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="UserCertificates" />
+    <NavigationProperty Name="UserClaims" Relationship="Self.FK_dbo_UserClaims_dbo_UserAccounts_ParentKey" FromRole="UserAccounts" ToRole="UserClaims" />
+  </EntityType>
+  <EntityType Name="UserCertificate">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="Thumbprint" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey" FromRole="UserCertificates" ToRole="UserAccounts" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentKey" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserAccount" Relationship="Self.FK_dbo_UserClaims_dbo_UserAccounts_ParentKey" FromRole="UserClaims" ToRole="UserAccounts" />
+  </EntityType>
+  <Association Name="FK_dbo_ClientClaims_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientClaims" Type="Self.ClientClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientClaims">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientCorsOrigins" Type="Self.ClientCorsOrigin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientCorsOrigins">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientCustomGrantTypes" Type="Self.ClientCustomGrantType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientCustomGrantTypes">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientIdPRestrictions" Type="Self.ClientIdPRestriction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientIdPRestrictions">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientPostLogoutRedirectUris" Type="Self.ClientPostLogoutRedirectUri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientPostLogoutRedirectUris">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientRedirectUris" Type="Self.ClientRedirectUri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientRedirectUris">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientScopes_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientScopes" Type="Self.ClientScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientScopes">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ClientSecrets_dbo_Clients_Client_Id">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ClientSecrets" Type="Self.ClientSecret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientSecrets">
+        <PropertyRef Name="Client_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_GroupChilds_dbo_Groups_ParentKey">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GroupChilds" Type="Self.GroupChild" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="GroupChilds">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LinkedAccountClaims" Type="Self.LinkedAccountClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="LinkedAccountClaims">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LinkedAccounts" Type="Self.LinkedAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="LinkedAccounts">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PasswordResetSecrets" Type="Self.PasswordResetSecret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="PasswordResetSecrets">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id">
+    <End Role="Scopes" Type="Self.Scope" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ScopeClaims" Type="Self.ScopeClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scopes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScopeClaims">
+        <PropertyRef Name="Scope_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id">
+    <End Role="Scopes" Type="Self.Scope" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ScopeSecrets" Type="Self.ScopeSecret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scopes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScopeSecrets">
+        <PropertyRef Name="Scope_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TwoFactorAuthTokens" Type="Self.TwoFactorAuthToken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="TwoFactorAuthTokens">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserCertificates" Type="Self.UserCertificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="UserCertificates">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserClaims_dbo_UserAccounts_ParentKey">
+    <End Role="UserAccounts" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserClaims" Type="Self.UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="Key" />
+      </Principal>
+      <Dependent Role="UserClaims">
+        <PropertyRef Name="ParentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IdSrv3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="ClientClaims" EntityType="Self.ClientClaim" />
+    <EntitySet Name="ClientCorsOrigins" EntityType="Self.ClientCorsOrigin" />
+    <EntitySet Name="ClientCustomGrantTypes" EntityType="Self.ClientCustomGrantType" />
+    <EntitySet Name="ClientIdPRestrictions" EntityType="Self.ClientIdPRestriction" />
+    <EntitySet Name="ClientPostLogoutRedirectUris" EntityType="Self.ClientPostLogoutRedirectUri" />
+    <EntitySet Name="ClientRedirectUris" EntityType="Self.ClientRedirectUri" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="ClientScopes" EntityType="Self.ClientScope" />
+    <EntitySet Name="ClientSecrets" EntityType="Self.ClientSecret" />
+    <EntitySet Name="Consents" EntityType="Self.Consent" />
+    <EntitySet Name="GroupChilds" EntityType="Self.GroupChild" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="LinkedAccountClaims" EntityType="Self.LinkedAccountClaim" />
+    <EntitySet Name="LinkedAccounts" EntityType="Self.LinkedAccount" />
+    <EntitySet Name="PasswordResetSecrets" EntityType="Self.PasswordResetSecret" />
+    <EntitySet Name="ScopeClaims" EntityType="Self.ScopeClaim" />
+    <EntitySet Name="Scopes" EntityType="Self.Scope" />
+    <EntitySet Name="ScopeSecrets" EntityType="Self.ScopeSecret" />
+    <EntitySet Name="Tokens" EntityType="Self.Token" />
+    <EntitySet Name="TwoFactorAuthTokens" EntityType="Self.TwoFactorAuthToken" />
+    <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
+    <EntitySet Name="UserCertificates" EntityType="Self.UserCertificate" />
+    <EntitySet Name="UserClaims" EntityType="Self.UserClaim" />
+    <AssociationSet Name="FK_dbo_ClientClaims_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientClaims_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientClaims" EntitySet="ClientClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientCorsOrigins" EntitySet="ClientCorsOrigins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientCustomGrantTypes" EntitySet="ClientCustomGrantTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientIdPRestrictions" EntitySet="ClientIdPRestrictions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientPostLogoutRedirectUris" EntitySet="ClientPostLogoutRedirectUris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientRedirectUris" EntitySet="ClientRedirectUris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientScopes_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientScopes_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientScopes" EntitySet="ClientScopes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ClientSecrets_dbo_Clients_Client_Id" Association="Self.FK_dbo_ClientSecrets_dbo_Clients_Client_Id">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientSecrets" EntitySet="ClientSecrets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_GroupChilds_dbo_Groups_ParentKey" Association="Self.FK_dbo_GroupChilds_dbo_Groups_ParentKey">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="GroupChilds" EntitySet="GroupChilds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="LinkedAccountClaims" EntitySet="LinkedAccountClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="LinkedAccounts" EntitySet="LinkedAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="PasswordResetSecrets" EntitySet="PasswordResetSecrets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id" Association="Self.FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id">
+      <End Role="Scopes" EntitySet="Scopes" />
+      <End Role="ScopeClaims" EntitySet="ScopeClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id" Association="Self.FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id">
+      <End Role="Scopes" EntitySet="Scopes" />
+      <End Role="ScopeSecrets" EntitySet="ScopeSecrets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="TwoFactorAuthTokens" EntitySet="TwoFactorAuthTokens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserCertificates" EntitySet="UserCertificates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserClaims_dbo_UserAccounts_ParentKey" Association="Self.FK_dbo_UserClaims_dbo_UserAccounts_ParentKey">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserClaims" EntitySet="UserClaims" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

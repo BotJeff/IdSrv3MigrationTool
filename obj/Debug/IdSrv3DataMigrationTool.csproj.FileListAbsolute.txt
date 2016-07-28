@@ -1,0 +1,15 @@
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe.config
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.pdb
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\EntityFramework.dll
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\EntityFramework.SqlServer.dll
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\EntityFramework.xml
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\EntityFramework.SqlServer.xml
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
+C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.csprojResolveAssemblyReference.cache
+C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe.config
+C:\Git\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
+C:\Git\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
+C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe
+C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.pdb

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdSrv3ModelStoreContainer" CdmEntityContainer="IdSrv3Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IdSrv3Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientClaims">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientClaim">
+        <MappingFragment StoreEntitySet="ClientClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientCorsOrigins">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientCorsOrigin">
+        <MappingFragment StoreEntitySet="ClientCorsOrigins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientCustomGrantTypes">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientCustomGrantType">
+        <MappingFragment StoreEntitySet="ClientCustomGrantTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GrantType" ColumnName="GrantType" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientIdPRestrictions">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientIdPRestriction">
+        <MappingFragment StoreEntitySet="ClientIdPRestrictions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientPostLogoutRedirectUris">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientPostLogoutRedirectUri">
+        <MappingFragment StoreEntitySet="ClientPostLogoutRedirectUris">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Uri" ColumnName="Uri" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientRedirectUris">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientRedirectUri">
+        <MappingFragment StoreEntitySet="ClientRedirectUris">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Uri" ColumnName="Uri" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IdSrv3Model.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientUri" ColumnName="ClientUri" />
+          <ScalarProperty Name="LogoUri" ColumnName="LogoUri" />
+          <ScalarProperty Name="RequireConsent" ColumnName="RequireConsent" />
+          <ScalarProperty Name="AllowRememberConsent" ColumnName="AllowRememberConsent" />
+          <ScalarProperty Name="AllowAccessTokensViaBrowser" ColumnName="AllowAccessTokensViaBrowser" />
+          <ScalarProperty Name="Flow" ColumnName="Flow" />
+          <ScalarProperty Name="AllowClientCredentialsOnly" ColumnName="AllowClientCredentialsOnly" />
+          <ScalarProperty Name="LogoutUri" ColumnName="LogoutUri" />
+          <ScalarProperty Name="LogoutSessionRequired" ColumnName="LogoutSessionRequired" />
+          <ScalarProperty Name="RequireSignOutPrompt" ColumnName="RequireSignOutPrompt" />
+          <ScalarProperty Name="AllowAccessToAllScopes" ColumnName="AllowAccessToAllScopes" />
+          <ScalarProperty Name="IdentityTokenLifetime" ColumnName="IdentityTokenLifetime" />
+          <ScalarProperty Name="AccessTokenLifetime" ColumnName="AccessTokenLifetime" />
+          <ScalarProperty Name="AuthorizationCodeLifetime" ColumnName="AuthorizationCodeLifetime" />
+          <ScalarProperty Name="AbsoluteRefreshTokenLifetime" ColumnName="AbsoluteRefreshTokenLifetime" />
+          <ScalarProperty Name="SlidingRefreshTokenLifetime" ColumnName="SlidingRefreshTokenLifetime" />
+          <ScalarProperty Name="RefreshTokenUsage" ColumnName="RefreshTokenUsage" />
+          <ScalarProperty Name="UpdateAccessTokenOnRefresh" ColumnName="UpdateAccessTokenOnRefresh" />
+          <ScalarProperty Name="RefreshTokenExpiration" ColumnName="RefreshTokenExpiration" />
+          <ScalarProperty Name="AccessTokenType" ColumnName="AccessTokenType" />
+          <ScalarProperty Name="EnableLocalLogin" ColumnName="EnableLocalLogin" />
+          <ScalarProperty Name="IncludeJwtId" ColumnName="IncludeJwtId" />
+          <ScalarProperty Name="AlwaysSendClientClaims" ColumnName="AlwaysSendClientClaims" />
+          <ScalarProperty Name="PrefixClientClaims" ColumnName="PrefixClientClaims" />
+          <ScalarProperty Name="AllowAccessToAllGrantTypes" ColumnName="AllowAccessToAllGrantTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientScopes">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientScope">
+        <MappingFragment StoreEntitySet="ClientScopes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Scope" ColumnName="Scope" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientSecrets">
+      <EntityTypeMapping TypeName="IdSrv3Model.ClientSecret">
+        <MappingFragment StoreEntitySet="ClientSecrets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consents">
+      <EntityTypeMapping TypeName="IdSrv3Model.Consent">
+        <MappingFragment StoreEntitySet="Consents">
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Scopes" ColumnName="Scopes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupChilds">
+      <EntityTypeMapping TypeName="IdSrv3Model.GroupChild">
+        <MappingFragment StoreEntitySet="GroupChilds">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="ChildGroupID" ColumnName="ChildGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="IdSrv3Model.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tenant" ColumnName="Tenant" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkedAccountClaims">
+      <EntityTypeMapping TypeName="IdSrv3Model.LinkedAccountClaim">
+        <MappingFragment StoreEntitySet="LinkedAccountClaims">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="ProviderAccountID" ColumnName="ProviderAccountID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkedAccounts">
+      <EntityTypeMapping TypeName="IdSrv3Model.LinkedAccount">
+        <MappingFragment StoreEntitySet="LinkedAccounts">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="ProviderAccountID" ColumnName="ProviderAccountID" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PasswordResetSecrets">
+      <EntityTypeMapping TypeName="IdSrv3Model.PasswordResetSecret">
+        <MappingFragment StoreEntitySet="PasswordResetSecrets">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="PasswordResetSecretID" ColumnName="PasswordResetSecretID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScopeClaims">
+      <EntityTypeMapping TypeName="IdSrv3Model.ScopeClaim">
+        <MappingFragment StoreEntitySet="ScopeClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AlwaysIncludeInIdToken" ColumnName="AlwaysIncludeInIdToken" />
+          <ScalarProperty Name="Scope_Id" ColumnName="Scope_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scopes">
+      <EntityTypeMapping TypeName="IdSrv3Model.Scope">
+        <MappingFragment StoreEntitySet="Scopes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="Emphasize" ColumnName="Emphasize" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IncludeAllClaimsForUser" ColumnName="IncludeAllClaimsForUser" />
+          <ScalarProperty Name="ClaimsRule" ColumnName="ClaimsRule" />
+          <ScalarProperty Name="ShowInDiscoveryDocument" ColumnName="ShowInDiscoveryDocument" />
+          <ScalarProperty Name="AllowUnrestrictedIntrospection" ColumnName="AllowUnrestrictedIntrospection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScopeSecrets">
+      <EntityTypeMapping TypeName="IdSrv3Model.ScopeSecret">
+        <MappingFragment StoreEntitySet="ScopeSecrets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Expiration" ColumnName="Expiration" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Scope_Id" ColumnName="Scope_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="IdSrv3Model.Token">
+        <MappingFragment StoreEntitySet="Tokens">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="TokenType" ColumnName="TokenType" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="JsonCode" ColumnName="JsonCode" />
+          <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TwoFactorAuthTokens">
+      <EntityTypeMapping TypeName="IdSrv3Model.TwoFactorAuthToken">
+        <MappingFragment StoreEntitySet="TwoFactorAuthTokens">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Issued" ColumnName="Issued" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccounts">
+      <EntityTypeMapping TypeName="IdSrv3Model.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccounts">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tenant" ColumnName="Tenant" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="IsAccountClosed" ColumnName="IsAccountClosed" />
+          <ScalarProperty Name="AccountClosed" ColumnName="AccountClosed" />
+          <ScalarProperty Name="IsLoginAllowed" ColumnName="IsLoginAllowed" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="LastFailedLogin" ColumnName="LastFailedLogin" />
+          <ScalarProperty Name="FailedLoginCount" ColumnName="FailedLoginCount" />
+          <ScalarProperty Name="PasswordChanged" ColumnName="PasswordChanged" />
+          <ScalarProperty Name="RequiresPasswordReset" ColumnName="RequiresPasswordReset" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsAccountVerified" ColumnName="IsAccountVerified" />
+          <ScalarProperty Name="LastFailedPasswordReset" ColumnName="LastFailedPasswordReset" />
+          <ScalarProperty Name="FailedPasswordResetCount" ColumnName="FailedPasswordResetCount" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="MobileCodeSent" ColumnName="MobileCodeSent" />
+          <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+          <ScalarProperty Name="MobilePhoneNumberChanged" ColumnName="MobilePhoneNumberChanged" />
+          <ScalarProperty Name="AccountTwoFactorAuthMode" ColumnName="AccountTwoFactorAuthMode" />
+          <ScalarProperty Name="CurrentTwoFactorAuthStatus" ColumnName="CurrentTwoFactorAuthStatus" />
+          <ScalarProperty Name="VerificationKey" ColumnName="VerificationKey" />
+          <ScalarProperty Name="VerificationPurpose" ColumnName="VerificationPurpose" />
+          <ScalarProperty Name="VerificationKeySent" ColumnName="VerificationKeySent" />
+          <ScalarProperty Name="VerificationStorage" ColumnName="VerificationStorage" />
+          <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCertificates">
+      <EntityTypeMapping TypeName="IdSrv3Model.UserCertificate">
+        <MappingFragment StoreEntitySet="UserCertificates">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="Thumbprint" ColumnName="Thumbprint" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserClaims">
+      <EntityTypeMapping TypeName="IdSrv3Model.UserClaim">
+        <MappingFragment StoreEntitySet="UserClaims">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ParentKey" ColumnName="ParentKey" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aab90d7d8b2b44308d0e8d92fd66c214" Name="Diagram1">
+        <EntityTypeShape EntityType="IdSrv3Model.C__MigrationHistory" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientClaim" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientCorsOrigin" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientCustomGrantType" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientIdPRestriction" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientPostLogoutRedirectUri" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientRedirectUri" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.Client" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientScope" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ClientSecret" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.Consent" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.GroupChild" Width="1.5" PointX="13" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.Group" Width="1.5" PointX="10.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.LinkedAccountClaim" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.LinkedAccount" Width="1.5" PointX="8" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.PasswordResetSecret" Width="1.5" PointX="8" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ScopeClaim" Width="1.5" PointX="13" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.Scope" Width="1.5" PointX="10.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.ScopeSecret" Width="1.5" PointX="13" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.Token" Width="1.5" PointX="10.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.TwoFactorAuthToken" Width="1.5" PointX="8" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.UserAccount" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.UserCertificate" Width="1.5" PointX="8" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IdSrv3Model.UserClaim" Width="1.5" PointX="8" PointY="16.125" IsExpanded="true" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientClaims_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientCorsOrigins_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientCustomGrantTypes_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientIdPRestrictions_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientPostLogoutRedirectUris_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientRedirectUris_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientScopes_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ClientSecrets_dbo_Clients_Client_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_GroupChilds_dbo_Groups_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_LinkedAccountClaims_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_LinkedAccounts_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_PasswordResetSecrets_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ScopeClaims_dbo_Scopes_Scope_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_ScopeSecrets_dbo_Scopes_Scope_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_TwoFactorAuthTokens_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_UserCertificates_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+        <AssociationConnector Association="IdSrv3Model.FK_dbo_UserClaims_dbo_UserAccounts_ParentKey" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,500 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1523E11-589F-4617-9DDF-794FCAC6034D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdSrv3DataMigrationTool</RootNamespace>
+    <AssemblyName>IdSrv3DataMigrationTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crypto\Classes\PasswordFormat.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\DefaultCrypto.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\ICrypto.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\System.Web.Helpers.Crypto.cs" />
+    <Compile Include="Crypto\Interfaces\IPasswordFormat.cs" />
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Application.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Membership.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Profile.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Role.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\User.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\UsersInRole.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Client.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientCorsOrigin.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientCustomGrantType.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientIdPRestriction.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientPostLogoutRedirectUri.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientRedirectUri.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientScope.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Consent.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\C__MigrationHistory.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Group.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\GroupChild.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\LinkedAccount.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\LinkedAccountClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\PasswordResetSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Scope.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ScopeClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ScopeSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Token.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\TwoFactorAuthToken.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserAccount.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserCertificate.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Classes\Migrate.cs" />
+    <Compile Include="Migrations\Classes\MigrateClaims.cs" />
+    <Compile Include="Migrations\Classes\MigrateGroups.cs" />
+    <Compile Include="Migrations\Classes\MigrateUsers.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrate.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateClaims.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateGroups.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateUsers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdSrv3Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdSrv2UserModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.edmx.diagram">
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.edmx.diagram">
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+      <LastGenOutput>IdSrv2UserModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+      <LastGenOutput>IdSrv2UserModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+      <LastGenOutput>IdSrv3Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+      <LastGenOutput>IdSrv3Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1523E11-589F-4617-9DDF-794FCAC6034D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdSrv3DataMigrationTool</RootNamespace>
+    <AssemblyName>IdSrv3DataMigrationTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crypto\Classes\PasswordFormat.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\DefaultCrypto.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\ICrypto.cs" />
+    <Compile Include="Crypto\IdSrv3Crypto\System.Web.Helpers.Crypto.cs" />
+    <Compile Include="Crypto\Interfaces\IPasswordFormat.cs" />
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Application.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Membership.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Profile.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\Role.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\User.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv2Models\UsersInRole.cs">
+      <DependentUpon>IdSrv2UserModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Client.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientCorsOrigin.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientCustomGrantType.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientIdPRestriction.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientPostLogoutRedirectUri.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientRedirectUri.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientScope.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ClientSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Consent.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\C__MigrationHistory.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Group.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\GroupChild.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\LinkedAccount.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\LinkedAccountClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\PasswordResetSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Scope.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ScopeClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\ScopeSecret.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\Token.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\TwoFactorAuthToken.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserAccount.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserCertificate.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkModels\IdSrv3Models\UserClaim.cs">
+      <DependentUpon>IdSrv3Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Classes\Migrate.cs" />
+    <Compile Include="Migrations\Classes\MigrateClaims.cs" />
+    <Compile Include="Migrations\Classes\MigrateGroups.cs" />
+    <Compile Include="Migrations\Classes\MigrateUsers.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrate.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateClaims.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateGroups.cs" />
+    <Compile Include="Migrations\Interfaces\IMigrateUsers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdSrv3Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdSrv2UserModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.edmx.diagram">
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.edmx.diagram">
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+      <LastGenOutput>IdSrv2UserModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv2Models\IdSrv2UserModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv2UserModel.edmx</DependentUpon>
+      <LastGenOutput>IdSrv2UserModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+      <LastGenOutput>IdSrv3Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameworkModels\IdSrv3Models\IdSrv3Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdSrv3Model.edmx</DependentUpon>
+      <LastGenOutput>IdSrv3Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+>>>>>>> 6984fb790f5598ba0e2af99b0681236b2876e077
+</Project>
