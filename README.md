@@ -5,4 +5,3 @@ IdentityServer is a .NET/Katana-based framework and hostable component that allo
 This tool aims to provide an example of how to migrate an Identity Server 2 database implementation to an Identity Server 3 database with an Identity Manager and BrockAllen MembershipReboot implementation.
 
 Please bear in mind, this is meant as an example and not plug and play as database implementations can vary. Enjoy.
-"# IdSrv3MigrationTool" 
