@@ -8,8 +8,8 @@ C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\bin\Debug\EntityF
 C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
 C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
 C:\TFS\IdentityServer3\IdentityServer3\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.csprojResolveAssemblyReference.cache
-C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe.config
-C:\Git\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
-C:\Git\IdSrv3DataMigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
-C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe
-C:\Git\IdSrv3DataMigrationTool\bin\Debug\IdSrv3DataMigrationTool.pdb
+C:\Git\IdSrv3MigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe.config
+C:\Git\IdSrv3MigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
+C:\Git\IdSrv3MigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
+C:\Git\IdSrv3MigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe
+C:\Git\IdSrv3MigrationTool\bin\Debug\IdSrv3DataMigrationTool.pdb

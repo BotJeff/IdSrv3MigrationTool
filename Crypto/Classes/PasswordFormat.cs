@@ -29,13 +29,15 @@ namespace IdSrv3DataMigrationTool.Crypto.Classes
             }
             idSrv3Entities.SaveChanges();
         }
-        private string GetNewPasswordFormat(string password, string salt, int year)
+        public string GetNewPasswordFormat(string password, string salt, int year)
         {
             DefaultCrypto crypto = new DefaultCrypto();
             int iterations = crypto.GetIterationsFromYear(year);          
             string hex = crypto.EncodeIterations(iterations);
 
-            return hex + "." + password + salt;
+            //return hex + "." + password + salt;
+            return hex + "." + password;
         }
+        //try this...Iteration count in hex + Password + Salt
     }
 }
