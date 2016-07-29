@@ -13,4 +13,3 @@ C:\Git\IdSrv3MigrationTool\obj\Debug\IdSrv3DataMigrationTool.exe
 C:\Git\IdSrv3MigrationTool\obj\Debug\IdSrv3DataMigrationTool.pdb
 C:\Git\IdSrv3MigrationTool\bin\Debug\IdSrv3DataMigrationTool.exe
 C:\Git\IdSrv3MigrationTool\bin\Debug\IdSrv3DataMigrationTool.pdb
-C:\Git\IdSrv3MigrationTool\obj\Debug\IdSrv3DataMigrationTool.csprojResolveAssemblyReference.cache
