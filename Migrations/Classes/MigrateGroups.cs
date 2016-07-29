@@ -13,9 +13,7 @@ namespace IdSrv3DataMigrationTool.Migrations.Classes
     {
         public void MapGroups()
         {
-            var roles = idSrv2Entities.Roles;
-
-            foreach (Role role in roles)
+            foreach (Role role in idSrv2Entities.Roles)
             {
                 idSrv3Entities.Groups.Add(new Group
                 {
