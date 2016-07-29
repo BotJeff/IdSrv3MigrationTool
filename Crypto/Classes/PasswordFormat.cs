@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IdSrv3DataMigrationTool.Crypto.Interfaces;
 using IdSrv3DataMigrationTool.Migrations.Classes;
 using IdSrv3DataMigrationTool.Crypto.IdSrv3Crypto;

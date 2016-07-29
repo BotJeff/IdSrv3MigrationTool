@@ -17,12 +17,12 @@ namespace IdSrv3DataMigrationTool.Migrations.Classes
             {
                 idSrv3Entities.Groups.Add(new Group
                 {
-                    ID              = role.RoleId,
-                    Tenant          = "default",
-                    Name            = role.RoleName,
-                    Description     = role.Description,
-                    Created         = DateTime.Now,
-                    LastUpdated     = DateTime.Now
+                    ID          = role.RoleId,
+                    Tenant      = "default",
+                    Name        = role.RoleName,
+                    Description = role.Description,
+                    Created     = DateTime.Now,
+                    LastUpdated = DateTime.Now
                 });
             }
             idSrv3Entities.SaveChanges();
