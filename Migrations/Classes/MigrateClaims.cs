@@ -14,14 +14,14 @@ namespace IdSrv3DataMigrationTool.Migrations.Classes
          */
         public void MapClaims()
         {
-            Dictionary<Guid, Role> roles = idSrv2Entities.Roles.ToDictionary(k => k.RoleId);
-            Dictionary<Guid, UserAccount> userAccount = idSrv3Entities.UserAccounts.ToDictionary(key => key.ID);       
+            var roles = idSrv2Entities.Roles.ToDictionary(k => k.RoleId);
+            var users = idSrv3Entities.UserAccounts.ToDictionary(key => key.ID);       
 
             foreach (var role in idSrv2Entities.UsersInRoles)
             {
                 idSrv3Entities.UserClaims.Add(new UserClaim
                 {
-                    ParentKey = userAccount[role.UserId].Key,
+                    ParentKey = users[role.UserId].Key,
                     Type = "Role",
                     Value = roles[role.RoleId].RoleName,
                 });

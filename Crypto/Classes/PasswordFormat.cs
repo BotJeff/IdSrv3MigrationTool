@@ -10,20 +10,20 @@ namespace IdSrv3DataMigrationTool.Crypto.Classes
 {
     public class PasswordFormat : Migrate, IPasswordFormat
     {
-        public virtual void UpdateUserAccountPasswordFormat()
+        public virtual void UpdatePasswordFormat()
         {
-            Dictionary<Guid, Membership> membershipDict = idSrv2Entities.Memberships.ToDictionary(key => key.UserId);
-            foreach (var userAccount in idSrv3Entities.UserAccounts)
+            var memberships = idSrv2Entities.Memberships.ToDictionary(key => key.UserId);
+            foreach (var user in idSrv3Entities.UserAccounts)                     
             {
-                var newPasswordDate = new DateTime(2016, 7, 21);
+                var pwDate = new DateTime(2016, 7, 21);
 
-                if (userAccount.Created < newPasswordDate && membershipDict.ContainsKey(userAccount.ID))
+                if (user.Created < pwDate && memberships.ContainsKey(user.ID))
                 {
-                    string oldHashedPassword    = membershipDict[userAccount.ID].Password;
-                    string oldPasswordSalt      = membershipDict[userAccount.ID].PasswordSalt;
-                    int year                    = membershipDict[userAccount.ID].LastPasswordChangedDate.Year;
+                    string oldHash = memberships[user.ID].Password;
+                    string oldSalt = memberships[user.ID].PasswordSalt;
+                    int year       = memberships[user.ID].LastPasswordChangedDate.Year;
 
-                    userAccount.HashedPassword = GetNewPasswordFormat(oldHashedPassword, oldPasswordSalt, year);          
+                    user.HashedPassword = GetNewPasswordFormat(oldHash, oldSalt, year);          
                 }
             }
             idSrv3Entities.SaveChanges();
@@ -34,13 +34,13 @@ namespace IdSrv3DataMigrationTool.Crypto.Classes
          *   encrption method was used, end users will need to reset passwords.
          */
 
-        public string GetNewPasswordFormat(string password, string salt, int year)
+        public string GetNewPasswordFormat(string pw, string salt, int year)
         {
             var crypto = new DefaultCrypto();
             int iterations = crypto.GetIterationsFromYear(year);          
             string hex = crypto.EncodeIterations(iterations);
 
-            return hex + "." + password + salt;     
+            return hex + "." + pw + salt;     
         }
     }
 }

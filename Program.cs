@@ -25,7 +25,7 @@ namespace IdSrv3DataMigrationTool
             migrateGroups.MapGroups();
 
             var passwordUpdate = new PasswordFormat();
-            passwordUpdate.UpdateUserAccountPasswordFormat();
+            passwordUpdate.UpdatePasswordFormat();
         }
     }
 }

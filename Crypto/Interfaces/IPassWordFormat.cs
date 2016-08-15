@@ -8,6 +8,6 @@ namespace IdSrv3DataMigrationTool.Crypto.Interfaces
 {
     interface IPasswordFormat
     {
-        void UpdateUserAccountPasswordFormat();
+        void UpdatePasswordFormat();
     }
 }

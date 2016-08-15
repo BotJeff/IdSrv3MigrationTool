@@ -13,7 +13,7 @@ namespace IdSrv3DataMigrationTool.Migrations.Classes
     {
         public void MapUsers()
         {
-            Dictionary<Guid, Membership> memberships = idSrv2Entities.Memberships.ToDictionary(x => x.UserId);
+            var memberships = idSrv2Entities.Memberships.ToDictionary(x => x.UserId);
             
             foreach (var user in idSrv2Entities.Users)
             {
